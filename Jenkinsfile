@@ -10,7 +10,9 @@ pipeline {
       parallel {
         stage('Compile') {
           steps {
-            sh 'sh mvn clean'
+            sh '''echo "PATH = ${PATH}"
+echo "M2_HOME = ${M2_HOME}"
+sh \'mvn package\''''
           }
         }
         stage('Test') {
