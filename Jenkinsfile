@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('checkout') {
       steps {
-        sh 'git \'https://github.com/jaipalreddyk/hello-world.git\''
+        git(url: 'https://github.com/jaipalreddyk/ecommerce.git', branch: 'master')
       }
     }
     stage('Compile') {
