@@ -10,7 +10,7 @@ pipeline {
       parallel {
         stage('Compile') {
           steps {
-            sh 'mvn compile'
+            sh 'compile'
           }
         }
         stage('Test') {
