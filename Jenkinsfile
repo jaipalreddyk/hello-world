@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('checkout') {
       steps {
-        sh 'sh \'https://github.com/jaipalreddyk/hello-world.git\''
+        sh 'git \'https://github.com/jaipalreddyk/hello-world.git\''
       }
     }
     stage('Compile') {
