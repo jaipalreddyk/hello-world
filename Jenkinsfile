@@ -10,18 +10,19 @@ pipeline {
       parallel {
         stage('Compile') {
           steps {
-            sh '''withMaven(maven : \'Maven\') {
-                    sh \'mvn compile\'
+            sh '''withMaven(maven : \'Maven\')
+ {
+                    sh \'mvn package\'
         
             }'''
-            }
           }
-          stage('Test') {
-            steps {
-              sh 'sh \'test\''
-            }
+        }
+        stage('Test') {
+          steps {
+            sh 'sh \'test\''
           }
         }
       }
     }
   }
+}
