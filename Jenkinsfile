@@ -10,9 +10,10 @@ pipeline {
       parallel {
         stage('Compile') {
           steps {
-            sh '''withMaven(maven : \'Maven\')
+            sh ''' sh \'mvn package\'
+withMaven(maven : \'Maven\')
  
-                    sh \'mvn package\'
+                   
         
             '''
           }
