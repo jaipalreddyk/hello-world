@@ -11,10 +11,10 @@ pipeline {
         stage('Compile') {
           steps {
             sh '''withMaven(maven : \'Maven\')
- {
+ 
                     sh \'mvn package\'
         
-            }'''
+            '''
           }
         }
         stage('Test') {
