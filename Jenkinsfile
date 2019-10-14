@@ -10,17 +10,18 @@ pipeline {
       parallel {
         stage('Compile') {
           steps {
-            sh '''echo "PATH = ${PATH}"
-echo "M2_HOME = ${M2_HOME}"
-sh \'mvn package\''''
+            sh '''withMaven(maven : \'Maven\') {
+                    sh \'mvn compile\'
+        
+            }'''
+            }
           }
-        }
-        stage('Test') {
-          steps {
-            sh 'sh \'test\''
+          stage('Test') {
+            steps {
+              sh 'sh \'test\''
+            }
           }
         }
       }
     }
   }
-}
